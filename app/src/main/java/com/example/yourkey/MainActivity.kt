@@ -2,12 +2,27 @@ package com.example.yourkey
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import androidx.databinding.DataBindingUtil
+import com.example.yourkey.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+    private val sharpKey: SharpKey = SharpKey()
+    private val flatKey: FlatKey = FlatKey()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        binding.apply {
+            inputButton.setOnClickListener { findKey(it) }
+            sharpKey = sharpKey
+            flatKey = flatKey
+        }
     }
 
     val sharpMajorMap: Map<Int, String> =
@@ -19,7 +34,31 @@ class MainActivity : AppCompatActivity() {
     val flatMajorMap: Map<Int, String> =
         mapOf(0 to "C dur", 1 to "F dur", 2 to "B dur", 3 to "Es dur",
             4 to "As dur", 5 to "Des dur", 6 to "Ges dur", 7 to "Ces dur")
-    val flatpMinorMap: Map<Int, String> =
+    val flatMinorMap: Map<Int, String> =
         mapOf(0 to "a moll", 1 to "d moll", 2 to "g moll", 3 to "c moll",
             4 to "f moll", 5 to "b moll", 6 to "es moll", 7 to "as moll")
+
+    private fun findKey(view: View) {
+        binding.apply {
+            val sharpNumber = sharpInput.text.toString().toInt()
+            val flatNumber = flatInput.text.toString().toInt()
+
+            //Mapのデータを取得→フラグメントに渡す→フラグメントを表示
+            sharpKey?.dur = sharpMajorMap[sharpNumber].toString()
+            sharpKey?.moll = sharpMinorMap[sharpNumber].toString()
+            flatKey?.dur = flatMajorMap[flatNumber].toString()
+            flatKey?.moll = flatMinorMap[flatNumber].toString()
+            invalidateAll()
+            startText.visibility = View.GONE
+            sharpInput.visibility = View.GONE
+            flatInput.visibility = View.GONE
+            inputButton.visibility = View.GONE
+            sharpAnswerDurText.visibility = View.VISIBLE
+            sharpAnswerMollText.visibility = View.VISIBLE
+            flatAnswerDurText.visibility = View.VISIBLE
+            flatAnswerMollText.visibility = View.VISIBLE
+        }
+    }
+
+
 }

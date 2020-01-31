@@ -6,4 +6,5 @@
     <string name="sharp_number_hint">＃は何個？</string>
     <string name="flat_number_hint">♭は何個？</string>
     <string name="input_text">調を調べる</string>
+    <string name="key_answer_text">ここに調が入る</string>
 </resources>

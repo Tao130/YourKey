@@ -15,7 +15,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3" />
+            app:layout_constraintVertical_bias="0.455" />
 
         <EditText
             android:id="@+id/sharp_input"
@@ -31,7 +31,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/start_text"
-            app:layout_constraintVertical_bias="0.1" />
+            app:layout_constraintVertical_bias="0.041" />
 
         <EditText
             android:id="@+id/flat_input"
@@ -55,6 +55,7 @@
             android:text="@string/input_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sharp_input"
             app:layout_constraintVertical_bias="0.1" />
@@ -65,14 +66,14 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:text="@string/key_answer_sharp_dur_text"
-            android:textSize="24sp"
+            android:textSize="14sp"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/start_text"
             app:layout_constraintEnd_toStartOf="@+id/sharp_answer_moll_text"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_button"
-            app:layout_constraintVertical_bias="0.2" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.691" />
 
         <TextView
             android:id="@+id/sharp_answer_moll_text"
@@ -80,7 +81,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:text="@string/key_answer_sharp_moll_text"
-            android:textSize="24sp"
+            android:textSize="14sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@+id/sharp_answer_dur_text"
             app:layout_constraintEnd_toEndOf="parent"
@@ -94,14 +95,14 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:text="@string/key_answer_flat_dur_text"
-            android:textSize="24sp"
+            android:textSize="14sp"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/start_text"
             app:layout_constraintEnd_toStartOf="@+id/flat_answer_moll_text"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sharp_answer_dur_text"
-            app:layout_constraintVertical_bias="0.2" />
+            app:layout_constraintVertical_bias="0.453" />
 
         <TextView
             android:id="@+id/flat_answer_moll_text"
@@ -109,7 +110,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:text="@string/key_answer_flat_moll_text"
-            android:textSize="24sp"
+            android:textSize="14sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@+id/flat_answer_dur_text"
             app:layout_constraintEnd_toEndOf="parent"

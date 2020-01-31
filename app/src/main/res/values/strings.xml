@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">YourKey</string>
+    <string name="flat">♭</string>
+    <string name="sharp">♯</string>
+    <string name="start_text">♯と♭の数を入力してください</string>
+    <string name="sharp_number_hint">＃は何個？</string>
+    <string name="flat_number_hint">♭は何個？</string>
+    <string name="input_text">調を調べる</string>
+</resources>

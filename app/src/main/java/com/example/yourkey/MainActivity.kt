@@ -11,18 +11,11 @@ import com.example.yourkey.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val sharpKey: SharpKey = SharpKey()
-    private val flatKey: FlatKey = FlatKey()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        binding.apply {
-            inputButton.setOnClickListener { findKey(it) }
-            sharpKey = sharpKey
-            flatKey = flatKey
-        }
+        binding.inputButton.setOnClickListener { findKey(it) }
     }
 
     val sharpMajorMap: Map<Int, String> =
@@ -43,22 +36,11 @@ class MainActivity : AppCompatActivity() {
             val sharpNumber = sharpInput.text.toString().toInt()
             val flatNumber = flatInput.text.toString().toInt()
 
-            //Mapのデータを取得→フラグメントに渡す→フラグメントを表示
-            sharpKey?.dur = sharpMajorMap[sharpNumber].toString()
-            sharpKey?.moll = sharpMinorMap[sharpNumber].toString()
-            flatKey?.dur = flatMajorMap[flatNumber].toString()
-            flatKey?.moll = flatMinorMap[flatNumber].toString()
-            invalidateAll()
-            startText.visibility = View.GONE
-            sharpInput.visibility = View.GONE
-            flatInput.visibility = View.GONE
-            inputButton.visibility = View.GONE
-            sharpAnswerDurText.visibility = View.VISIBLE
-            sharpAnswerMollText.visibility = View.VISIBLE
-            flatAnswerDurText.visibility = View.VISIBLE
-            flatAnswerMollText.visibility = View.VISIBLE
+            sharpAnswerDurText.setText(sharpMajorMap[sharpNumber].toString())
+            sharpAnswerMollText.setText(sharpMinorMap[sharpNumber].toString())
+            flatAnswerDurText.setText(flatMajorMap[flatNumber].toString())
+            flatAnswerMollText.setText(flatMinorMap[flatNumber].toString())
         }
     }
-
 
 }

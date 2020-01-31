@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <data>
-
-        <variable
-            name="sharpKey"
-            type="com.example.yourkey.SharpKey" />
-
-        <variable
-            name="flatKey"
-            type="com.example.yourkey.FlatKey" />
-    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -75,45 +63,59 @@
             android:id="@+id/sharp_answer_dur_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@={sharpKey.dur}"
-            android:visibility="gone"
+            android:fontFamily="sans-serif"
+            android:text="@string/key_answer_sharp_dur_text"
+            android:textSize="24sp"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/sharp_answer_moll_text"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/input_button"
+            app:layout_constraintVertical_bias="0.2" />
 
         <TextView
             android:id="@+id/sharp_answer_moll_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@={sharpKey.moll}"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:fontFamily="sans-serif"
+            android:text="@string/key_answer_sharp_moll_text"
+            android:textSize="24sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/sharp_answer_dur_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sharp_answer_dur_text"
+            app:layout_constraintTop_toTopOf="@+id/sharp_answer_dur_text" />
 
         <TextView
             android:id="@+id/flat_answer_dur_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@={flatKey.dur}"
-            android:visibility="gone"
+            android:fontFamily="sans-serif"
+            android:text="@string/key_answer_flat_dur_text"
+            android:textSize="24sp"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/flat_answer_moll_text"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/sharp_answer_dur_text"
+            app:layout_constraintVertical_bias="0.2" />
 
         <TextView
             android:id="@+id/flat_answer_moll_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@={flatKey.moll}"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:fontFamily="sans-serif"
+            android:text="@string/key_answer_flat_moll_text"
+            android:textSize="24sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/flat_answer_dur_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/flat_answer_dur_text"
+            app:layout_constraintTop_toTopOf="@+id/flat_answer_dur_text" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
